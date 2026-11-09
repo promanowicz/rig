@@ -95,7 +95,7 @@ describe('GET /digest/:night (page)', () => {
     const html = await res.text();
     expect(res.status).toBe(200);
     expect(html).toContain('lane/sync');
-    expect(html).toContain("1 line didn't parse");
+    expect(html).toContain('1 line didn&#39;t parse'); // Hono escapes the apostrophe in HTML
   });
 });
 
